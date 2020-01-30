@@ -1,0 +1,186 @@
+<div class="container">
+  <h2>Customer Form</h2>
+  <div   *ngIf="showflg!='showflag'" class="card">
+
+  <form [formGroup]="myForm"  class="m-5 pb-5 bg-info">
+      <div class="form-group">
+
+        <label class="center-block" >First Name:
+          <input  class="form-control" class="form-control" formControlName="fname">
+          <!-- <div  class="alert alert-danger"  *ngIf="myForm.controls['Firstname'].invalid && (myForm.controls['Firstname'].dirty || myForm.controls['Firstname'].touched)" > -->
+              <div class="alert alert-danger" *ngIf="myForm.get('fname').hasError('required') && myForm.get('fname').touched"> 
+             Name is required.
+           </div>  
+         <!-- </div> -->
+        </label>
+      </div>
+       
+        &nbsp;&nbsp;
+        <div class="form-group">
+          <label class="center-block">Last Name:
+          <input class="form-control" formControlName="lname">
+          <!-- <div *ngIf="myForm.controls['lname'].invalid && (myForm.controls['Lastname'].dirty || myForm.controls['Lastname'].touched)" class="invalid-feedback"> -->
+              <div class="alert alert-danger"  *ngIf="myForm.get('lname').hasError('required') && myForm.get('lname').touched">
+             Last Name is required.
+            </div>
+          <!-- </div> -->
+        </label>  
+        </div>   
+         <br>
+         <div class="form-group">
+          <label class="center-block">age:
+          <input class="form-control" formControlName="age">
+          <!-- <div *ngIf="myForm.controls['lname'].invalid && (myForm.controls['Lastname'].dirty || myForm.controls['Lastname'].touched)" class="invalid-feedback"> -->
+              <div class="alert alert-danger"  *ngIf="myForm.get('age').hasError('required') && myForm.get('age').touched">
+             age is required.
+            </div>
+          <!-- </div> -->
+        </label>  
+        </div>  
+        <br>
+        <div class="form-group">
+        <label class="center-block">Address:
+            <textarea class="form-control" formControlName="address"  placeholder="type here..."  required>
+           </textarea>
+              <!-- <div class="invalid-feedback" *ngIf="myForm.controls['Address'].invalid && (myForm.controls['Address'].dirty || myForm.controls['Address'].touched)"> -->
+                  <div class="alert alert-danger" *ngIf="myForm.get('address').hasError('required') && myForm.get('address').touched">
+                      Address is required.
+                </div>
+              <!-- </div> -->
+        
+          </label>
+         </div>
+      <br>
+
+      <div class="form-group">
+          <label class="center-block">City:
+              <input class="form-control" formControlName="city" required>
+              <!-- <div *ngIf="myForm.controls['city'].invalid && (myForm.controls['city'].dirty || myForm.controls['city'].touched)" class="invalid-feedback"> -->
+                  <div class="alert alert-danger" *ngIf="myForm.get('city').hasError('required') && myForm.get('city').touched">
+                city is required.
+                </div>
+              <!-- </div> -->
+            </label>  
+      </div>   
+         <br>
+
+         <div class="form-group">
+
+            <label class="center-block">State:
+                <input class="form-control" formControlName="state" required>
+                <!-- <div *ngIf="myForm.controls['state'].invalid && (myForm.controls['state'].dirty || myForm.controls['state'].touched)" class="invalid-feedback"> -->
+                    <div class="alert alert-danger" *ngIf="myForm.get('state').hasError('required') && myForm.get('state').touched">
+                 state is required.
+                  </div>
+                <!-- </div> -->
+              </label>     
+         </div>
+          <br>
+
+          <div class="form-group">
+
+        <label class="center-block">Gender:
+            <select  class="form-control" formControlName="gender"  placeholder=gender required>
+                <option value="male">male</option>
+                <option value="female">female</option>
+              </select>
+              <!-- <div *ngIf="myForm.controls['Gender'].invalid && (myForm.controls['Gender'].dirty || myForm.controls['Gender'].touched)" class="invalid-feedback"> -->
+                  <div class="alert alert-danger" *ngIf="myForm.get('gender').hasError('required') && myForm.get('gender').touched">
+                      Gender is required.
+                </div>
+              <!-- </div> -->
+        
+          </label>
+          </div>
+      <br>
+      <div class="form-group">
+          <label class="center-block">Inquiry:
+              <textarea class="form-control" formControlName="inquiry"  placeholder="type here..."  required>
+              </textarea>
+                <!-- <div *ngIf="myForm.controls['inquiry'].invalid && (myForm.controls['inquiry'].dirty || myForm.controls['inquiry'].touched)" class="invalid-feedback"> -->
+                    <div class="alert alert-danger"   *ngIf="myForm.get('inquiry').hasError('required') && myForm.get('inquiry').touched">
+                        inquiry is required.
+                  </div>
+                <!-- </div> -->
+          
+            </label>
+      </div>
+            <br>
+            <div class="form-group">
+
+            <label class="center-block">Phone No:
+                <input class="form-control" formControlName="phoneno" required>
+                <!-- <div *ngIf="myForm.controls['phoneno'].invalid && (myForm.controls['phoneno'].dirty || myForm.controls['phoneno'].touched)" class="invalid-feedback"> -->
+                    <div class="alert alert-danger"  *ngIf="myForm.get('phoneno').hasError('required') && myForm.get('phoneno').touched">
+                   Phone no is required.
+                  </div>
+                <!-- </div> -->
+              </label>   
+            </div>  
+              <br>
+              <div class="form-group">
+ 
+              <label class="center-block">Email:
+                  <input class="form-control" formControlName="email" required>
+                  <!-- <div *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].dirty || myForm.controls['email'].touched)" class="invalid-feedback"> -->
+                      <div  class="alert alert-danger" *ngIf="myForm.get('email').hasError('required') && myForm.get('email').touched">
+                    email is required.
+                    </div>
+                  <!-- </div> -->
+                </label> 
+                </div> 
+                
+                <!-- <div class="form-group">
+                  <label class="center-block">Photos: -->
+                      <!-- <input class="form-control" formControlName="photo" required> -->
+  
+                    <!-- <input type="file" formControlName="productImage" name="pic" accept="png,.doc,.pdf,image/*" required> -->
+
+                      <!-- <div *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].dirty || myForm.controls['email'].touched)" class="invalid-feedback"> -->
+                          <!-- <div  class="alert alert-danger" *ngIf="myForm.get('productImage').hasError('required')">
+                            photo is required.
+                        </div> -->
+
+                      <!-- </div> -->
+                    <!-- </label> 
+                    </div>     -->
+
+            
+
+     
+
+
+
+	  <div class="form-group">
+
+        <button type="submit" (click)="submitForm()"
+        [disabled]="myForm.pristine || myForm.invalid" class="btn btn-success">
+        Save
+      </button>
+<br><br>
+      <button (click)="custdtls('showflag')" class="btn btn-success">
+      Show
+    </button>
+      </div>
+</form>
+</div>
+
+
+<div *ngIf="showflg=='showflag'">
+    <div *ngFor="let item of itemlist">
+    {{item.fname}}
+    {{item.lname}}
+    <!-- {{item.address}}
+  
+    {{item.city}}
+    {{item.phoneno}}
+    {{item.email}}
+    {{item.inquiry}}
+  
+    {{item.state}} -->
+  
+  
+  
+    </div>
+  </div>
+</div>
